@@ -1,0 +1,6 @@
+alt Gr + 7 + espace
+`string ${variable} blabla`
+
+
+temps réel java : reactiveX (rxJava)
+observable design pattern
