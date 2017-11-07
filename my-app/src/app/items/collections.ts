@@ -2,18 +2,23 @@ import { Item } from './interface/item.model';
 
 export const COLLECTION: Item[] = [
   {
-    name: 'Florian',
-    reference: '1234',
+    name: 'Sauron',
+    reference: 'anneau',
     state: 0
   },
   {
-    name: 'Stéphanie',
-    reference: '666',
+    name: 'Diablo',
+    reference: 'feu',
     state: 1
   },
   {
-    name: 'Christophe',
-    reference: '77777',
+    name: 'Dark vador',
+    reference: 'sabre',
     state: 2
+  },
+  {
+    name: 'ça',
+    reference: 'maquillage',
+    state: 3
   }
 ];
