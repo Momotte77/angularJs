@@ -11,7 +11,7 @@ export class MenuComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.title = 'App livreur';
+    this.title = 'Walkyries';
   }
 
 }

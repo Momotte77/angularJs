@@ -1,7 +1,7 @@
 <div class="card">
   <div class="card-header">
     <span [appState]="item.state"></span>
-    <button *ngIf="etat.ALIVRER === item.state || etat.ENCOURS === item.state" class="btn btn-primary" style="float:right;" (click)=changeState(item)>Suivant</button>
+    <button *ngIf="etat.ALIVRER === item.state || etat.ENCOURS === item.state" class="btn btn-primary right" (click)=changeState(item)>Suivant</button>
   </div>
   <div class="card-body">
     <h4 class="card-title">{{item.name}}</h4>
