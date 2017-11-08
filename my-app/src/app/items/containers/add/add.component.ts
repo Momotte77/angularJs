@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Item } from '../../interface/item.model';
+import { CollectionService } from '../../../core/services/collection/collection.service';
 
 @Component({
   selector: 'app-add',
@@ -6,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add.component.scss']
 })
 export class AddComponent implements OnInit {
+  collection: Item[];
 
-  constructor() { }
+  constructor(private _CollectionService: CollectionService) { }
 
   ngOnInit() {
+    this.collection = this._CollectionService.collection;
+  }
+
+  addItem(newIten: Item) {
+    this._CollectionService.add(newIten);
   }
 
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit, OnChanges } from '@angular/core';
-import { COLLECTION } from '../../collections';
 import { Item } from '../../interface/item.model';
 import { State } from '../../enum/state.enum';
+import { CollectionService } from '../../../core/services/collection/collection.service';
 
 @Component({
   selector: 'app-liste-items',
@@ -9,23 +9,25 @@ import { State } from '../../enum/state.enum';
   styleUrls: ['./liste-items.component.scss']
 })
 export class ListeItemsComponent implements OnInit, OnChanges {
-  collection: Item[] = COLLECTION;
+  collection: Item[];
   state = State;
 
-  constructor() {}
+  constructor(private _CollectionService: CollectionService) {}
 
   ngOnChanges(): void {
     this.collection.sort(function(a, b){
       if (a.state < b.state) {
-        return -1;
+        return 1;
       }
       if (a.state > b.state) {
-        return 1;
+        return -1;
       }
       return 0;
     });
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.collection = this._CollectionService.collection;
+  }
 
 }

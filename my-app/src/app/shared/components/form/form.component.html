@@ -1,20 +1,18 @@
 <div class="container">
-  <form #form='ngForm' novalidate (ngSubmit)="process()">
+  <form class="form" novalidate (ngSubmit)="process()" [formGroup]="form">
     <div class="form-group">
       <label for="idName">Méchant</label>
-      <input [(ngModel)]="currentItem.name" type="text" class="form-control" id="idName" name="name" #nom='ngModel' placeholder="Devil"
-        required minlength="3">
-      <div class="alert alert-danger" *ngIf="nom.invalid && nom.touched">méchant requis</div>
+      <input formControlName='name' type="text" class="form-control" id="idName" name="name" placeholder="Devil">
+      <div class="alert alert-danger" *ngIf="isError('name')">méchant requis</div>
     </div>
     <div class="form-group">
       <label for="idref">Référence</label>
-      <input [(ngModel)]="currentItem.reference" type="text" class="form-control" id="idref" name="ref" #ref='ngModel' required
-        minlength="4">
-      <div class="alert alert-danger" *ngIf="ref.invalid && ref.touched">référence requise</div>
+      <input formControlName='ref' type="text" class="form-control" id="idref" name="ref">
+      <div class="alert alert-danger" *ngIf="isError('ref')">référence requise</div>
     </div>
     <div class="form-group">
       <label for="idState">Etat</label>
-      <select [(ngModel)]="currentItem.state" class="form-control" id="idState" name="state">
+      <select formControlName='state' class="form-control" id="idState" name="state">
         <option [ngValue]="state.ALIVRER">A livrer</option>
         <option [ngValue]="state.ENCOURS">En cours</option>
         <option [ngValue]="state.DELIVREE">Délivrée</option>

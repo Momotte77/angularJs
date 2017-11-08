@@ -4,3 +4,20 @@ alt Gr + 7 + espace
 
 temps réel java : reactiveX (rxJava)
 observable design pattern
+
+
+e2e end to end : pour test
+
+decorator JS
+https://medium.com/google-developers/exploring-es7-decorators-76ecb65fb841
+
+web component
+https://developer.mozilla.org/fr/docs/Web/Web_Components
+
+
+reset de from
+
+reset(){
+this.form.reset();
+this.form.get('state').setValue(this.state.ALIVRER);
+}
