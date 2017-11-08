@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Item } from '../../interface/item.model';
 import { CollectionService } from '../../../core/services/collection/collection.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -8,7 +8,8 @@ import { Observable } from 'rxjs/Observable';
 @Component({
   selector: 'app-add',
   templateUrl: './add.component.html',
-  styleUrls: ['./add.component.scss']
+  styleUrls: ['./add.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AddComponent implements OnInit {
 
@@ -25,6 +26,6 @@ export class AddComponent implements OnInit {
   open() {
     const modalRef = this.modalService.open(ModalComponent);
     modalRef.componentInstance.msg = 'felicidad : un méchant est invoqué';
-    modalRef.componentInstance.route = 'list';
+    modalRef.componentInstance.route = '/items/list';
   }
 }

@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { RouterModule, Routes, Router } from '@angular/router';
-import { ItemsModule } from './items/items.module';
 import { RoutingModule } from './routing.module';
 
 import { AppComponent } from './app.component';
@@ -14,11 +13,10 @@ import { CoreRoutingModule } from './core/core-routing.module';
 @NgModule({
   imports: [
     BrowserModule,
-    ItemsModule,
+    RoutingModule,
     CoreModule,
-    RouterModule,
     SharedModule,
-    RoutingModule
+    RouterModule
   ],
   declarations: [AppComponent],
   providers: [],

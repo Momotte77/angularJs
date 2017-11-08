@@ -6,10 +6,6 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 
 const coreRoutes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: '',
-  redirectTo: '/home',
-  pathMatch: 'full'
-  },
   { path: '**', component: PageNotFoundComponent }
 ];
 

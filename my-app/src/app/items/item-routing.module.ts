@@ -13,7 +13,7 @@ const itemRoutes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(
+    RouterModule.forChild(
       itemRoutes
     )
     // other imports here
