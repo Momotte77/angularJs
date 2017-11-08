@@ -1,5 +1,4 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { Router } from '@angular/router';
 
 import { State } from '../../../items/enum/state.enum';
 import { Item } from '../../../items/interface/item.model';
@@ -24,7 +23,7 @@ export class FormComponent implements OnInit {
 
   @Output() currentItem: EventEmitter<Item> = new EventEmitter();
 
-  constructor(private _ROUTER: Router, private fb: FormBuilder) {
+  constructor(private fb: FormBuilder) {
     this.nameCtrl = this.fb.control('', [
       Validators.required,
       Validators.minLength(3)
@@ -63,7 +62,6 @@ export class FormComponent implements OnInit {
     });
 
     this.reset();
-    this._ROUTER.navigate(['list']);
   }
 
   reset() {

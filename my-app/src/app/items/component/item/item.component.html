@@ -1,7 +1,8 @@
 <div class="card">
   <div class="card-header">
     <span [appState]="item.state"></span>
-    <button *ngIf="etat.ALIVRER === item.state || etat.ENCOURS === item.state" class="btn btn-primary right" (click)=changeState(item)>Suivant</button>
+    <button type="button" *ngIf="etat.DELIVREE !== item.state" class="btn btn-sm btn-danger right" (click)=delete(item)>X</button>
+    <button *ngIf="etat.ALIVRER === item.state || etat.ENCOURS === item.state" class="btn btn-sm btn-primary right" (click)=changeState(item)>Suivant</button>
   </div>
   <div class="card-body">
     <h4 class="card-title">{{item.name}}</h4>
